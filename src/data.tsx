@@ -1,101 +1,79 @@
-// import { useEffect } from "react";
-
-interface Item {
-    key: number,
+export interface Item {
+    id: number,
+    number: number,
     title: string,
-    url: string | undefined,
+    url: string ,
 }
-
-
-async function pokemon(param: string) {
-    try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu', {mode: 'cors'})
-        const data = await response.json()
-        const img = data.sprites.front_default;
-        cards[0].url = img;
-        
-        return img;
-    }
-    catch(error) {
-        console.error(error)
-    }
-}
-
-
-// pokemon()
-
 
 export const cards: Array<Item> = [
     {
-        key: 0,
+        id: 0,
+        number: 1,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 1,
+        id: 1,
+        number: 2,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 2,
+        id: 2,
+        number: 3,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 3,
+        id: 3,
+        number: 4,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 4,
+        id: 4,
+        number: 5,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 5,
+        id: 5,
+        number: 6,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 6,
+        id: 6,
+        number: 7,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 7,
+        id: 7,
+        number: 8,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 8,
+        id: 8,
+        number: 9,
         title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
     {
-        key: 9,
+        id: 9,
+        number: 10,
         title: 'sdf',
-        url: undefined,
-    },
-
-    {
-        key: 10,
-        title: 'sdf',
-        url: undefined,
-    },
-
-    {
-        key: 11,
-        title: 'sdf',
-        url: undefined,
+        url: '',
     },
 
 ]

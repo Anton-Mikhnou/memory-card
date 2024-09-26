@@ -1,6 +1,7 @@
 img {
     width: 250x;
     height: 250px;
+    // pointer-events: none;
 }
 
 .container {
@@ -12,4 +13,8 @@ img {
     border-radius: 5%;
     width: 300px;
     height: 350px;
+
+    h2{
+        user-select: none;    
+    }   
 }
