@@ -5,6 +5,7 @@ import { Item } from "../../data";
 
 export default function Main() {
     const [data, setData] = useState<Item[]>([]);
+    // const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchUrls = async () => {
@@ -16,16 +17,20 @@ export default function Main() {
             setData(updateCards);
         };
         fetchUrls();
-    }, []);
+    }, [data]);
 
     function toUpperCase(string: string): string {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    function mixData() {
+        setData([...cards.sort(() => Math.random() - 0.5)])
+    }
+
     return (
         <>
             {data.map(obj => (
-                <Card key={obj.id} name={obj.title} url={obj.url}/>
+                <Card key={obj.id} name={obj.title} url={obj.url} fun = {mixData}/>
             ))}
         </>
     )
