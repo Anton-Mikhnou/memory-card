@@ -5,19 +5,19 @@ import { Item } from "../../data";
 
 export default function Main() {
     const [data, setData] = useState<Item[]>([]);
-    // const [isLoading, setIsLoading] = useState<boolean>(true);
 
-    useEffect(() => {
+    useEffect(() => {  
         const fetchUrls = async () => {
             const updateCards = await Promise.all(cards.map(async (card) => {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${card.number}`)
                 const data = await response.json();
                 return { ...card, title:toUpperCase(data.species.name) ,url: data.sprites.front_default}
             }));
+            console.log('1');
             setData(updateCards);
         };
         fetchUrls();
-    }, [data]);
+    }, []);
 
     function toUpperCase(string: string): string {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -34,4 +34,4 @@ export default function Main() {
             ))}
         </>
     )
-}
+} 

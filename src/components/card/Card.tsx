@@ -19,7 +19,7 @@ export default function Card({name, url, fun}: CardProp) {
     return (
         <>
           <div className={style['container']} ref={myRef}>
-            <img src={url} alt="dsf" id='pokemonSprite'  draggable="false"/>
+            <img src={url} alt="pokemon" id='pokemonSprite'  draggable="false"/>
             <h2>{name}</h2>
           </div>
         </>
