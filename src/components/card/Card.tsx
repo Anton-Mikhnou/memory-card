@@ -2,23 +2,28 @@ import { useRef, useEffect } from 'react';
 import style from './Card.module.scss';
 
 interface CardProp {
-  name: string,
-  url: string
+    name: string,
+    url: string,
+    mixFunction: () => void,
 }
 
-export default function Card({name, url, fun}: CardProp) {
-    const myRef = useRef(null)
+export default function Card({name, url, mixFunction, onCLi}: CardProp) {
+    const myRef = useRef<HTMLDivElement>(null!) ;
 
     useEffect(() => {
-        myRef.current.addEventListener('click', fun);
+
+        const node = myRef;
+
+        node.current.addEventListener('click', mixFunction);
         return () => {
-            myRef.current.removeEventListener('click', fun);
+            node.current.removeEventListener('click', mixFunction);
         };
-    }, []);
+        
+    });
 
     return (
         <>
-          <div className={style['container']} ref={myRef}>
+          <div className={style['container']} ref={myRef} onClick={onCLi}>
             <img src={url} alt="pokemon" id='pokemonSprite'  draggable="false"/>
             <h2>{name}</h2>
           </div>

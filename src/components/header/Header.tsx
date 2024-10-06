@@ -1,9 +1,14 @@
 import style from './Header.module.scss';
 
-export default Header() {
+type HeaderProps = number;
+
+export default function Header({score}: HeaderProps) {
+
     return (
         <>
-        
+            {/* <div>scroe:{score}</div> */}
+            {/* <div>best score: </div> */}
         </>
     )
+
 }

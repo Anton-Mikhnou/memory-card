@@ -1,6 +1,6 @@
-import style from './App.module.scss'
-import Card from './components/card/Card'
-import Main from './components/main/Main'
+// import style from './App.module.scss';
+import Main from './components/main/Main';
+// import Header from './components/header/Header';
 
 function App() {
 
@@ -9,19 +9,8 @@ function App() {
     <>
       <h1>Hello</h1>
 
-      <div className={style['container']}>
+        {/* <Header/> */}
         <Main/>
-        {/* <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/> */}
-      </div>
     </>
   )
 }
