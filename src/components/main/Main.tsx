@@ -30,14 +30,14 @@ export default function Main() {
         setData(prevData => [...prevData].sort(() => Math.random() - 0.5));
     }
 
-    function changeScore(keyOfComponent) {
+    function changeScore(keyOfComponent: number) {
         if (key.length === 0 ) {
             setKey(prevKey => [...prevKey, keyOfComponent])
             setScore(score + 1);
         }
 
 
-        let repeatingElemet = key.includes(keyOfComponent);
+        const repeatingElemet = key.includes(keyOfComponent);
 
         if (!repeatingElemet) {
             setScore(score + 1);
@@ -53,11 +53,13 @@ export default function Main() {
 
     return (
         <>
-            <div>score: {score}</div>
-            <div>best score: {bestScore}</div>
+            <div className={style['score']}>
+                <div>Score: {score}</div>
+                <div>Best score: {bestScore}</div>
+            </div>
             <div className={style['container-card']}>
                 {data.map(obj => (
-                    <Card key={obj.id} name={obj.title} url={obj.url} mixFunction = {mixData} onCLi = {() => changeScore(obj.id)}/>
+                    <Card key={obj.id} name={obj.title} url={obj.url} mixFunction = {mixData} changeScoreFunction = {() => changeScore(obj.id)}/>
                 ))}
             </div>
         </>
